@@ -18,17 +18,10 @@
       --muted:     #6B6672;
       --card:      #FFFFFF;
       --border:    #E3DDEE;
-
-        /* aliases so every old reference below still resolves */
-      --cream: var(--base);
-      --warm:  var(--primary);
-      --sage:  var(--secondary);
-      --blush: var(--secondary-light);
-}
     }
     html, body {
       height: 100%;
-      background: var(--cream);
+      background: var(--base);
       font-family: 'DM Sans', sans-serif;
       color: var(--ink);
       overflow: hidden;
@@ -64,7 +57,7 @@
     }
     .eyebrow {
       font-size: 10px; font-weight: 500; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--warm); margin-bottom: 10px;
+      text-transform: uppercase; color: var(--primary); margin-bottom: 10px;
     }
     .cover-title {
       font-family: 'Cormorant Garamond', serif;
@@ -91,14 +84,14 @@
     }
     .btn-primary {
       align-self: stretch;
-      background: var(--ink); color: var(--cream);
+      background: var(--ink); color: var(--base);
       border: none; border-radius: 2px;
       font-family: 'DM Sans', sans-serif;
       font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
       text-transform: uppercase; padding: 17px 40px;
       cursor: pointer; transition: background 0.2s, transform 0.15s;
     }
-    .btn-primary:active { background: #37473D; transform: scale(0.98); }
+    .btn-primary:active { background: var(--secondary); transform: scale(0.98); }
 
     /* ── QUESTION ── */
     #question { align-items: stretch; }
@@ -111,7 +104,7 @@
       flex: 1; height: 4px; background: var(--border); border-radius: 99px; overflow: hidden;
     }
     .q-progress-fill {
-      height: 100%; background: var(--warm); border-radius: 99px;
+      height: 100%; background: var(--primary); border-radius: 99px;
       transition: width 0.45s cubic-bezier(.4,0,.2,1);
     }
     .q-step-label {
@@ -120,7 +113,7 @@
     }
     .q-image {
       width: 100%; height: 44vw; max-height: 220px;
-      background: linear-gradient(135deg, #E3EDE4 0%, #A9C2AD 100%);
+      background: linear-gradient(135deg, var(--accent) 0%, var(--secondary-light) 100%);
       display: flex; align-items: center; justify-content: center;
       font-size: 62px; flex-shrink: 0; overflow: hidden;
     }
@@ -130,7 +123,7 @@
     .q-body { flex: 1; padding: 22px 20px 108px; }
     .q-counter {
       font-size: 10px; font-weight: 500; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--warm); margin-bottom: 6px;
+      text-transform: uppercase; color: var(--primary); margin-bottom: 6px;
     }
     .q-title {
       font-family: 'Cormorant Garamond', serif;
@@ -156,12 +149,12 @@
       font-size: 13px; line-height: 1.4; color: var(--ink);
     }
     .option-btn.selected {
-      border-color: var(--warm); background: #EEF5EF;
+      border-color: var(--primary); background: var(--accent);
     }
-    .option-btn.selected .opt-label { color: var(--warm); }
+    .option-btn.selected .opt-label { color: var(--primary); }
     .q-nav {
       position: fixed; bottom: 0; left: 0; right: 0;
-      background: var(--cream); border-top: 1px solid var(--border);
+      background: var(--base); border-top: 1px solid var(--border);
       padding: 12px 16px 16px; display: flex; gap: 10px;
       z-index: 10;
     }
@@ -174,7 +167,7 @@
     }
     .btn-ghost:active { background: var(--border); }
     .btn-next {
-      flex: 2.5; background: var(--ink); color: var(--cream);
+      flex: 2.5; background: var(--ink); color: var(--base);
       border: none; border-radius: 2px;
       font-family: 'DM Sans', sans-serif;
       font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
@@ -186,18 +179,18 @@
     /* ── RESULT ── */
     #result { align-items: stretch; }
     .result-header {
-      background: var(--ink); color: var(--cream);
+      background: var(--ink); color: var(--base);
       padding: 44px 24px 32px; text-align: center; flex-shrink: 0;
     }
-    .result-header .eyebrow { color: var(--blush); margin-bottom: 10px; }
+    .result-header .eyebrow { color: var(--secondary-light); margin-bottom: 10px; }
     .result-header h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(26px, 7.5vw, 40px); font-weight: 700; line-height: 1.1;
       margin-bottom: 8px;
     }
-    .result-header p { font-size: 13px; color: #AFC2B4; line-height: 1.6; }
+    .result-header p { font-size: 13px; color: var(--secondary-light); line-height: 1.6; }
     .result-count-bar {
-      background: #1B2721; color: var(--blush);
+      background: var(--secondary); color: var(--secondary-light);
       padding: 10px 24px; text-align: center;
       font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -219,7 +212,7 @@
     .product-img {
       width: 80px; height: 80px; min-width: 80px;
       border-radius: 6px; overflow: hidden;
-      background: linear-gradient(135deg, #E8F0E8 0%, #B7CBB9 100%);
+      background: linear-gradient(135deg, var(--accent) 0%, var(--secondary-light) 100%);
       display: flex; align-items: center; justify-content: center;
       font-size: 34px;
     }
@@ -232,7 +225,7 @@
     .product-info { flex: 1; min-width: 0; }
     .product-tag {
       font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--sage); margin-bottom: 4px;
+      text-transform: uppercase; color: var(--secondary); margin-bottom: 4px;
     }
     .product-name {
       font-family: 'Cormorant Garamond', serif;
@@ -241,24 +234,24 @@
     }
     .btn-buy {
       display: inline-block;
-      background: var(--warm); color: #fff;
+      background: var(--primary); color: #fff;
       border: none; border-radius: 2px; text-decoration: none;
       font-family: 'DM Sans', sans-serif;
       font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
       text-transform: uppercase; padding: 9px 16px; cursor: pointer;
       transition: background 0.2s;
     }
-    .btn-buy:active { background: #3E5C46; }
+    .btn-buy:active { background: var(--secondary); }
     .retake-wrap { padding: 0 20px 48px; display: flex; flex-direction: column; gap: 10px; }
     .btn-send {
-      width: 100%; background: var(--warm); color: #fff;
+      width: 100%; background: var(--primary); color: #fff;
       border: none; border-radius: 2px;
       font-family: 'DM Sans', sans-serif;
       font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
       text-transform: uppercase; padding: 16px; cursor: pointer;
       transition: background 0.2s;
     }
-    .btn-send:active { background: #3E5C46; }
+    .btn-send:active { background: var(--secondary); }
     .btn-retake {
       width: 100%; background: transparent;
       border: 1.5px solid var(--ink); border-radius: 2px;
