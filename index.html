@@ -632,7 +632,7 @@ function buildFlexBubble(p) {
                 {
                   type: "text",
                   text: p.price,
-                  color: "#8FB496",
+                  color: "#E4DEF0",
                   size: "sm",
                   weight: "bold"
                 }
@@ -643,7 +643,7 @@ function buildFlexBubble(p) {
         {
           type: "box",
           layout: "vertical",
-          backgroundColor: "#FAFBF9",
+          backgroundColor: "#E4DEF0",
           paddingAll: "12px",
           contents: [
             {
@@ -654,10 +654,31 @@ function buildFlexBubble(p) {
                 uri: p.storeUrl
               },
               style: "primary",
-              color: "#4F7358",
+              color: "#4E4270",
               height: "sm"
             }
           ]
+        }
+      ]
+    }
+  };
+}
+
+function buildIntroBubble() {
+  return {
+    type: "bubble",
+    size: "kilo",
+    body: {
+      type: "box",
+      layout: "vertical",
+      paddingAll: "0px",
+      contents: [
+        {
+          type: "image",
+          url: "https://raw.githubusercontent.com/sh-arch2260/product-catalog/master/esuchen/hair/result-card.png",
+          size: "full",
+          aspectRatio: "1:1",
+          aspectMode: "cover"
         }
       ]
     }
@@ -672,7 +693,7 @@ async function sendToChat() {
     return;
   }
 
-  const bubbles = recommended.map(pid => buildFlexBubble(PRODUCTS[pid]));
+  const bubbles = [buildIntroBubble(), ...recommended.map(pid => buildFlexBubble(PRODUCTS[pid]))];
 
   try {
     await liff.sendMessages([
