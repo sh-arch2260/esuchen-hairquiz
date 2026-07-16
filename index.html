@@ -604,8 +604,8 @@ function buildFlexBubble(p) {
               background: {
                 type: "linearGradient",
                 angle: "0deg",
-                startColor: "#1D2A22cc",
-                endColor: "#1D2A2200"
+                startColor: "#16141Acc",
+                endColor: "#16141A00"
               },
               width: "100%",
               height: "50%",
@@ -632,7 +632,7 @@ function buildFlexBubble(p) {
                 {
                   type: "text",
                   text: p.price,
-                  color: "#E4DEF0",
+                  color: "#e2bea3",
                   size: "sm",
                   weight: "bold"
                 }
@@ -643,7 +643,7 @@ function buildFlexBubble(p) {
         {
           type: "box",
           layout: "vertical",
-          backgroundColor: "#E4DEF0",
+          backgroundColor: "#FFFFFF",
           paddingAll: "12px",
           contents: [
             {
@@ -654,7 +654,7 @@ function buildFlexBubble(p) {
                 uri: p.storeUrl
               },
               style: "primary",
-              color: "#4E4270",
+              color: "#e2bea3",
               height: "sm"
             }
           ]
@@ -672,6 +672,7 @@ function buildIntroBubble() {
       type: "box",
       layout: "vertical",
       paddingAll: "0px",
+      backgroundColor: "#FAFBF9",
       contents: [
         {
           type: "image",
@@ -679,6 +680,32 @@ function buildIntroBubble() {
           size: "full",
           aspectRatio: "1:1",
           aspectMode: "cover"
+        },
+        {
+          type: "box",
+          layout: "horizontal",
+          backgroundColor: "#FFFFFF",
+          paddingAll: "12px",
+          contents: [
+            {
+              type: "text",
+              text: "您的專屬髮品推薦",
+              color: "#7e5f49",
+              size: "sm",
+              weight: "bold",
+              gravity: "center",
+              flex: 1
+            },
+            {
+              type: "text",
+              text: "→",
+              color: "#7e5f49",
+              size: "md",
+              weight: "bold",
+              align: "end",
+              gravity: "center"
+            }
+          ]
         }
       ]
     }
